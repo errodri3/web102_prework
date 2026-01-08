@@ -9,6 +9,21 @@ body {
     width: 50px;
 }
 
+h2 {
+    display:flex;
+    justify-content: center;
+}
+
+#first-game {
+    color: gold;
+    background-color: rgb(112, 75, 16);
+}
+
+#second-game {
+    color: rgb(214, 214, 214);
+    background-color: rgb(125, 125, 125);
+}
+
 .header {
     display: flex;
     background-color: lightblue;
@@ -21,6 +36,7 @@ body {
 
 .stats-container {
     display: flex;
+    align-items: center;
 }
 
 .stats-card {
@@ -30,6 +46,11 @@ body {
     margin: 1%;
     width: 100%;
     text-align: center;
+}
+
+.stats-card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 30px lightblue;
 }
 
 #num-contributions, #total-raised, #num-games {

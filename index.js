@@ -44,7 +44,7 @@ function addGamesToPage(games) {
         // between the end of the src attribute and the end of the tag ("/>")
         gameCard.innerHTML = `
             <h3>${game.name}</h3>
-            <img src="${game.img}" alt="${game.name}" />
+            <img class="game-img" src="${game.img}" alt="${game.name}" />
             <p>${game.description}</p>
             <p><strong>Pledged:</strong> $${game.pledged.toLocaleString()}</p>
             <p><strong>Goal:</strong> $${game.goal.toLocaleString()}</p>
@@ -193,7 +193,21 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
+const [topGame, runnerUpGame, ...rest] = sortedGames;
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
+const topGameElement = document.createElement("p");
+topGameElement.innerText = topGame.name;
+firstGameContainer.appendChild(topGameElement);
 
 // do the same for the runner up item
+const runnerUpElement = document.createElement("p");
+runnerUpElement.innerText = runnerUpGame.name;
+secondGameContainer.appendChild(runnerUpElement);
+
+// Secret Keys:
+// Challenge 0 - instructions
+// Challenge 1 - seaworthy
+// Challenge 2 - OOZEdiveTRAPpine
+// Challenge 3 - 6games-container.stats-card15
+// Challenge 4 - orangeGAMES_JSON
